@@ -162,12 +162,6 @@ button:hover {
     cursor: pointer;
 }
 
-.results-container.stock-zero {
-    background-color: #FF4C4C;
-    color: #FFF;
-  }
-  
-
 .results-container.found {
     background-color: #4CAF50;
     color: #FFF;

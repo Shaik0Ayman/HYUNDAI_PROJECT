@@ -48,7 +48,6 @@ document.getElementById("search-btn").addEventListener("click", () => {
   const query = document.getElementById("search-input").value.toLowerCase();
   
   const index = shop1Data[0].indexOf(filter); // Use SHOP1 as structure for all
-  const hasStockZero = results.some(row => row[stockIndex] === "0");
 
   const searchResults = (data) => 
     data.filter((row, idx) => idx > 0 && row[index]?.toLowerCase().includes(query));
@@ -66,8 +65,7 @@ document.getElementById("search-btn").addEventListener("click", () => {
     const resultsContainer = shopElement.querySelector(".shop-results");
 
     if (results.length > 0) {
-      shopElement.classList.add(hasStockZero ? "stock-zero" : "found");
-      shopElement.classList.remove(hasStockZero ? "found" : "stock-zero");
+      shopElement.classList.add("found");
 
       resultsContainer.innerHTML = results.map(row => `<p>${row.join(" | ")}</p>`).join("");
     } else {
